@@ -82,11 +82,11 @@ namespace UnityEditor
 
 		public override void BoxFill(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
 		{
+			if (brushTarget == null)
+				return;
+				
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
-				return;
-
-			if (brushTarget == null)
 				return;
 
 			foreach (Vector3Int location in position.allPositionsWithin)
@@ -99,11 +99,11 @@ namespace UnityEditor
 
 		public override void BoxErase(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
 		{
+			if (brushTarget == null)
+				return;
+				
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
-				return;
-
-			if (brushTarget == null)
 				return;
 
 			foreach (Vector3Int location in position.allPositionsWithin)
